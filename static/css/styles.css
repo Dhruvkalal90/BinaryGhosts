@@ -1,0 +1,91 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #00e0fe, #1107fe);
+    color: white;
+}
+
+/* Header */
+.navbar {
+    background-color: #fff !important;
+    color: #1107fe !important;
+}
+
+.navbar-brand {
+    color: #1107fe !important;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #f2f2f2;
+    color: #1107fe;
+    border: 1px solid #1107fe !important;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #f2f2f2;
+    border: 1px solid #333 !important;
+}
+
+/* Welcome Text */
+.welcome-text {
+    font-size: 2rem;
+}
+
+/* Dashboard Grid */
+.option-card {
+    background: white;
+    color: #1107fe;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.option-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Icons */
+.icon {
+    color: #1107fe;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Icons */
+.option-card:hover .icon {
+    transform: rotate(10deg);
+    color: #00e0fe;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    background-color: #fff;
+    color: linear-gradient(to right,#00e0feca,#1107feca);
+}

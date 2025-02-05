@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/line-style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+     .faculty
+        {
+            width:100%;
+            padding: 70px 0;
+        }
+        .faculty h1
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 20px;
+        }
+        .faculty h1 span
+        {
+            color:orange;
+            font-family: mv boli;
+            margin-left: 10px;
+        }
+        .faculty h1 span::after
+        {
+            content: '';
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background: orange;
+            display: block;
+            bottom: 15px;
+            position: relative;
+        }
+        .faculty .faculty_box
+        {
+            width: 100%;
+            display: flex;
+            margin: 70px auto;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap:50px;
+        }
+        .faculty .faculty_box .faculty_card
+        {
+            width: 350px;
+            height: 485px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            padding: 8px 20px;
+            margin: 0 8px;
+        }
+        .faculty .faculty_box .faculty_card .faculty_profile
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: 0.3s;
+            
+        }
+        .faculty .faculty_box .faculty_card .faculty_profile img
+        {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 5px solid #cccccc;
+        }
+        .faculty .faculty_box .faculty_card:hover .faculty_profile
+        {
+            transform: translateY(-60px);
+            cursor: pointer;
+        }
+        .faculty .faculty_box .faculty_card .faculty_text
+        {
+            text-align: center;
+        }
+        .faculty .faculty_box .faculty_card .faculty_text .name
+        {
+            color:black;
+            transition: 0.3s;
+        }
+        .faculty .faculty_box .faculty_card:hover .faculty_text .name
+        {
+            transform: translateY(-50px);
+            cursor: pointer;
+        }
+        .faculty .faculty_box .faculty_card .faculty_text .facult_icon
+        {
+            color: orange;
+            transition: 0.3s;
+        }
+        .faculty .faculty_box .faculty_card:hover .faculty_text .facult_icon
+        {
+            transform: translateY(-30px);
+            cursor: pointer;
+        }
+        .faculty .faculty_box .faculty_card .faculty_text .faculty_social i
+        {
+            margin: 5px 1px;
+            font-size: 15px;
+            opacity: 0;
+            cursor: pointer;
+            transition: 0.3s;
+            color: blue;
+        }
+        .faculty .faculty_box .faculty_card:hover .faculty_text .faculty_social i
+        {
+            opacity: 1;
+            transform: translateY(-8px);
+        }
+        .faculty .faculty_box .faculty_card .faculty_text p
+        {
+            text-align: center;
+            line-height: 22px;
+            transition: 0.3s;
+        }
+        .faculty .faculty_box .faculty_card:hover .faculty_text p
+        {
+            margin-top: 5px;
+        }
+    </style>
+    <title>Bootstrap 5 webiste</title>
+</head>
+<body data-bs-spy="scroll"  data-bs-target=".navbar">
+    <!--Navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white" data-aos="fade-down">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><h2 class="multicolor">EduConnect</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#course">COURSE</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#faculty">FACULTY</a>
+                  </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">CONTACT</a>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-main ms-auto" onclick="location.href='register.html'">Login</button>
+          </div>
+        </div>
+      </nav>
+
+      <!--Hero-->
+      <section id="home" class="bg-cover hero-section" style="background-image:url(../static/img/img2.jpg);">
+        <div class="overlay"></div>
+        <div class="container text-white text-center">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4" data-aos="zoom-in">We Ensure a Better Education<br> for Better World</h1>
+                    <p class="my-4" data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet <br>consequatur iure qui ullam, voluptates repudiandae quam esse. </p>
+                    <a href="#"  class="btn btn-main">Get Started</a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <!--Course-->
+      <section id="course" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-up">
+                    <h1>Courses</h1>
+                    <div class="divider"></div>
+                    <p>Take the first step toward your new career
+                        Get professional-level training and earn a credential recognized by leading companies.</p>   
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service">
+                        <div class="service-img">
+                            <a href="https://www.shiksha.com/bca-bachelor-of-computer-applications-chp"><img src="../static/img/bca.png" alt=""></a>
+                            <div class="icon"><i class="icon-laptop"></i></div>
+                        </div>
+                        <h5 class="mt-5 pt-4">01.BCA</h5>
+                        <p>BCA is a three year undergraduate degree programme in computer applications. Candidates who want to pursue a career as a computer developer, programmer and join any profession in the information technology field can opt for the BCA degree programme.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service">
+                        <div class="service-img">
+                            <a href=""><img src="../static/img/bba.jpeg.jpg" alt=""></a>
+                            <div class="icon"><i class="icon-bargraph"></i></div>
+                        </div>
+                        <h5 class="mt-5 pt-4">02.BBA</h5>
+                        <p>BBA (Bachelor of Business Administration) is a 3-year undergraduate program and it covers key subjects like marketing, finance, and human resources, with the specialization options in areas such as international business and digital marketing.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service">
+                        <div class="service-img">
+                            <a href=""><img src="../static/img/btech.jpeg.jpg" alt=""></a>
+                            <div class="icon"><i class="icon-pencil"></i></div>
+                        </div>
+                        <h5 class="mt-5 pt-4">03.B Tech</h5>
+                        <p>Bachelor of Technology, which is an undergraduate level professional engineering degree course spanning 4 years. B Tech is a field related to computers and technology that includes a detailed study of programming and computer software applications. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+          <!--Faculty-->
+    <section id="faculty" class="faculty">
+        <h1>Professors</h1>
+    
+            <div class="faculty_box">
+                <div class="faculty_card">
+                    <div class="faculty_profile">
+                        <img src="../static/img/f1.png" alt="">
+                    </div>
+                    <div class="faculty_text">
+                        <h2 class="name">John Deo</h2>
+                        <div class="facult_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+    
+                        <div class="faculty_social">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <p style="text-align: left;">
+                            I'm Angela, I'm a developer with a passion for teaching.
+                            <br>I'm the lead instructor at the London App Brewery, London's leading Programming Bootcamp. 
+                            <br> I've been invited by companies such as Twitter, Facebook and Google to teach their employees.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="faculty_card">
+                    <div class="faculty_profile">
+                        <img src="../static/img/f2.png" alt="">
+                    </div>
+                    <div class="faculty_text">
+                        <h2 class="name">John Deo</h2>
+                        <div class="facult_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+    
+                        <div class="faculty_social">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <p style="text-align: left;">
+                            I'm Angela, I'm a developer with a passion for teaching.
+                            <br>I'm the lead instructor at the London App Brewery, London's leading Programming Bootcamp. 
+                            <br> I've been invited by companies such as Twitter, Facebook and Google to teach their employees.
+                        </p>
+                    </div>
+                </div>
+    
+    
+                <div class="faculty_card">
+                    <div class="faculty_profile">
+                        <img src="../static/img/f3.png" alt="">
+                    </div>
+                    <div class="faculty_text">
+                        <h2 class="name">John Deo</h2>
+                        <div class="facult_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+    
+                        <div class="faculty_social">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <p style="text-align: left;">
+                            I'm Angela, I'm a developer with a passion for teaching.
+                            <br>I'm the lead instructor at the London App Brewery, London's leading Programming Bootcamp. 
+                            <br> I've been invited by companies such as Twitter, Facebook and Google to teach their employees.
+                        </p>
+                    </div>
+                </div>
+    
+    
+                <div class="faculty_card">
+                    <div class="faculty_profile">
+                        <img src="../static/img/avatar_3.jpg" alt="">
+                    </div>
+                    <div class="faculty_text">
+                        <h2 class="name">John Deo</h2>
+                        <div class="facult_icon">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+    
+                        <div class="faculty_social">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <p style="text-align: left;">
+                            I'm Angela, I'm a developer with a passion for teaching.
+                            <br>I'm the lead instructor at the London App Brewery, London's leading Programming Bootcamp. 
+                            <br> I've been invited by companies such as Twitter, Facebook and Google to teach their employees.
+                        </p>
+                    </div>
+                </div>
+    
+    
+    
+    
+            </div>
+    
+       
+      </section>
+
+      <!--About-->
+      <section id="about" class="bg-cover" style="background-image:url(../static/img/cover_3.jpg);">
+        <div class="overlay"></div>
+        <div class="container text-white text-center">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-down">
+                    <h1>About Us</h1>
+                    <div class="divider"></div>
+                    <p>Revolutionizing Campus Life Through Technology
+                        EduConnect is a smart campus platform designed to enhance student engagement, faculty efficiency, and administrative workflows through an integrated digital experience. It serves as a one-stop solution for accessing academic resources, managing schedules, tracking progress, and fostering seamless communication within the campus.
+                        </p>   
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="text-center">
+<div class="container">
+    <div class="row gx-4 gy-5">
+        <div class="col-md-4 feature" data-aos="zoom-out">
+            <i class='bx bxs-graduation'></i>
+            <h5 class="mt-4 mb-3">Personalized Learning </h5>
+            <p>Students can access course materials, assignments, and announcements in one place.
+            </p>   
+        </div>
+        <div class="col-md-4 feature" data-aos="zoom-out">
+            <div class="icon"><i class="icon-browser"></i></div>
+            <h5 class="mt-4 mb-3"> Faculty Management</h5>
+            <p>A streamlined system for faculty to manage student records, attendance, and evaluations.
+            </p>   
+        </div>
+        <div class="col-md-4 feature" data-aos="zoom-out">
+            <i class='bx bxs-school'></i>
+            <h5 class="mt-4 mb-3"> Campus Services</h5>
+            <p>Simplified access to hostel booking, fee payments, library, and transport services.
+            </p>   
+        </div>
+        <div class="col-md-4 feature" data-aos="zoom-out">
+            <div class="icon"><i class="icon-bargraph"></i></div>
+            <h5 class="mt-4 mb-3"> Smart Analytics</h5>
+            <p>AI-powered dashboards provide insights into academic and extracurricular performance.
+            </p>   
+        </div>
+        <div class="col-md-4 feature" data-aos="zoom-out">
+            <div class="icon"><i class="icon-clock"></i></div>
+            <h5 class="mt-4 mb-3">24/7 Connectivity</h5>
+            <p> A seamless communication hub connecting students, faculty, and administration.</p>   
+        </div>
+        <div class="col-md-4 feature" data-aos="zoom-out">
+            <i class='bx bxs-bell'></i>
+            <h5 class="mt-4 mb-3">Automated Notifications & Reminders</h5>
+            <p>Stay updated with assignment deadlines, event schedules, and campus alerts.</p>   
+        </div>
+    </div>
+</div>
+    </section> 
+
+      <!--Contact-->
+      <section id="contact"  class="bg-cover text-white" style="background-image:url(../static/img/cover_3.jpg);">
+        <div class="container">
+            <div class="overlay"></div>
+            <div class="row">
+                <div class="col-12 section-intro text-center">
+                    <h1>Get in Touch</h1>
+                    <div class="divider"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, perspiciatis, velit nulla <br>officiis minus doloremque sit explicabo,culpa id quasi? Delectus vitae sed sunt quas.</p>   
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <form action="#" class="row g-4">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" placeholder="Full name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" class="form-control" placeholder="Email Address">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Message"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-main" type="submit">Send Message</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div> 
+            </div>
+    </section> 
+
+    <!--footer-->
+    <div class="container">
+        <footer class="py-3 my-4">
+          <p class="text-center text-body-secondary">© 2025 EduConnect. All rights reserved.</p>
+        </footer>
+      </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

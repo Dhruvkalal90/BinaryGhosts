@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right,#00e0fe,#1107fe);
+    color: #f2f2f2;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: linear-gradient(to right,#00e0fe,#1107fe);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: linear-gradient(to right,#00e0fe,#1107fe);
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.back-button {
+    background: none;
+    border: 2px solid linear-gradient(to right,#00e0fe,#1107fe);
+    color: linear-gradient(to right,#00e0fe,#1107fe);
+    padding: 5px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+/* Main Section */
+.login-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.heading {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.login-form {
+    background: #fff;
+    padding: 20px 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    color: #1107fe;
+    display: block;
+    margin-bottom: 5px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1107fe;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* input:hover {
+    background: linear-gradient(to right,#00e0fe,#1107fe);
+    box-shadow: 0 0 5px linear-gradient(to right,#00e0fe,#1107fe);
+}
+
+input:focus {
+    border-color: linear-gradient(to right,#00e0fe,#1107fe);
+    box-shadow: 0 0 8px linear-gradient(to right,#00e0fe,#1107fe);
+} */
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.login-button, .reset-button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.login-button {
+    background: linear-gradient(to right,#00e0fe,#1107fe);
+    color: #fff;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.login-button:hover {
+    background: linear-gradient(to right,#00e0feca,#1107feca);
+    transform: scale(1.05);
+}
+
+.reset-button {
+    background-color: #f2f2f2;
+    border: 1px solid #1107fe;
+    color: #1107fe;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.reset-button:hover {
+    background: linear-gradient(to right,#00e0feca,#1107feca);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: linear-gradient(to right,#00e0fe,#1107fe);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.forgot-password:hover {
+    color: linear-gradient(to right,#00e0feca,#1107feca);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    background-color: #fff;
+    color: linear-gradient(to right,#00e0feca,#1107feca);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-form {
+        /* padding: 20px;
+        margin: 0 10px; */
+        width: 100%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+}
